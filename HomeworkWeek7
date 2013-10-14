@@ -1,0 +1,79 @@
+//Ben Alday 
+import java.util.Scanner;
+
+public class GuessGame 
+{
+	public static void main(String args[])
+	{
+		Scanner input = new Scanner(System.in);
+		
+	
+		//int i = 0;
+		//int userGuess = 0;
+	   // String userHistory[] = new String [10];
+		
+		int userGuess = 0;
+		int computerNumber = 1 + (int) ( Math.random() * 10 );
+		int userNumber;
+		int tries = 1;
+		boolean correct = false, greater;
+		//boolean repeat = true;
+	
+		do  
+		//while(repeat)
+		{
+			
+		System.out.print("Guess A Number Between 1 And 10: ");
+		userNumber = input.nextInt();
+		correct = (userNumber == computerNumber);
+		greater = (userNumber > computerNumber);
+		if (correct)
+		{
+			System.out.println("You guessed correct.");
+			userGuess++;
+			//userHistory[userGuess] = " Guessed Correct";
+			
+	
+		}
+
+		   else if(greater)
+		   {
+			
+			System.out.println("You Guessed Too High.");
+			userGuess++;
+			//userHistory[userGuess] = " Guessed High";
+			
+		
+		   }
+		   else
+		   {	
+			System.out.println("You Guessed Too Low");
+			userGuess++;
+			//userHistory[userGuess] = " Guessed Low";
+			
+		   }
+		
+			tries++;
+			//repeat = (tries <= computerNumber && userNumber != computerNumber);
+		}
+		while(userNumber != computerNumber); 
+			
+		
+		
+
+  		System.out.print("\nNumber Of Tries Attempted: ");
+  		System.out.print("User Tries = " + userGuess );
+  		System.out.println();
+  		
+  		//for(i =0; i < computerNumber; i++ )
+		//	{
+  			//	System.out.print("History: ");
+			//	System.out.println("User." + userHistory[i] );
+			//	tries++;
+			//}
+  		
+  		
+  		System.out.print("Thank You For Playing");
+	}
+}
+				
